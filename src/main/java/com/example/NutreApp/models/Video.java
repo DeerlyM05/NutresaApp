@@ -1,8 +1,12 @@
 package com.example.NutreApp.models;
 
+import java.util.List;
 import java.util.UUID;
 
 import com.example.NutreApp.models.helpers.Categoria;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.OneToMany;
 
 public class Video {
 
@@ -11,6 +15,10 @@ public class Video {
     private String descripcion;
     private String url;
     private Categoria categoria;
+
+    @OneToMany (mappedBy="video")
+    @JsonManagedReference (value="video_visualizacion")
+    private List<Visualizacion> visualizacion;
 
     public Video() {
     }
