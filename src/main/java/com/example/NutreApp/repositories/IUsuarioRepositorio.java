@@ -20,7 +20,7 @@ public interface IUsuarioRepositorio extends JpaRepository<Usuario,UUID>{
 
     List<Usuario> findByRolOrderByNombreAsc(String rol);
 
-    boolean exiexistsByCorreo(String correo);
+    boolean existsByCorreo(String correo);
 
 
     }
